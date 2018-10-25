@@ -89,7 +89,16 @@ void merge(int A[], size_t p, size_t q, size_t r) {
   Merge Sort Implementation Algorithm
   Sorts the elements in the subarray A[p..r]
 */
-void mergeSort(int A[], size_t p, size_t r) {
+void mergeSort(int A[], size_t p, size_t r)
+{
+  if(p <r)
+  {
+    int q = p+r/2;
+    mergeSort(A[],p,r);
+    mergeSort(A[],q + 1, r);
+    merge(A,p,q,r);
+
+  }
   //You must implement this function
 }
 
@@ -112,18 +121,22 @@ int main () {
 
 
   //Calls to merge function should go here
-
-
+  merge(A,7,9,3,2);
+  merge(A,2,3,9,7);
+  merge(A,10,34,12);
+  merge(A,6,30,90,7);
+  merge(A,20,3,100);
+  merge(A)
   //SECOND BLOCK OF COMMENTS
-  /*
+
   cout << "Array after sorting:  " << endl;
   printArray(A, 7);
   cout << endl;
   assert(isSorted(A, 7));
-  */
+
 
   //THIRD BLOCK OF COMMENTS
-  /*
+  int arrayCasado[] = {23,12,34,53,12,43,56,8,7,9};
   int B[] = {222, 111, 999, 888, 99, 77, 422};
   cout << "Testing mergeSort on the following array:" << endl;
   printArray(B, 7);
@@ -139,6 +152,6 @@ int main () {
   assert(isSorted(C, 11));
   cout << "Array after sorting:" << endl;
   printArray(C, 11);
-  */
+  mergeSort(arrayCasado,10);
 
 }
