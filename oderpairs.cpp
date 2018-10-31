@@ -71,9 +71,9 @@ int mergeSort(int A[], size_t p, size_t r) {
 
 int main () {
   // FIRST BLOCK OF COMMENTS
-  /*
+
   int A[] = {22, 11, 99, 88, 9, 7};
   assert(mergeSort(A,0,5)==4);
-  */
+
 
 }
